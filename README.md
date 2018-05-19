@@ -9,13 +9,13 @@ Burp 代理允许你通过监视和操纵应用程序传输的关键参数和其
 #### 1、Intercept
 用于显示和修改 HTTP 请求和响应，通过你的浏览器和 Web 服务器之间。在 BurpProxy 的选项中，您可以配置拦截规则来确定请求是什么和响应被拦截（例如：范围内的项目、与特定文件扩展名、项目要求与参数等）。该面板还包含以下控制：
 
-![](https://img-blog.csdn.net/20170114160107241)
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.1.png)
 
 消息类型显示的四种格式:
 
-![](https://img-blog.csdn.net/20170114155746220)
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.2.png)
 
-![](https://img-blog.csdn.net/20170114170530282)
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.3.png)
 
 - Change request method：对所有的请求，经过把所有相关的请求参数适当地搬迁到这个请求里来，你就可以自动地把请求的方法在 POST 和 GET 中间切换。通过发送恶意的请求使用这个选项来快速测试应用程序的极限参数是多少。
 - Change body encoding：对于所有的请求，你可以在应用程序／X－WWW 格式的 URL 编码和多重表单/数据之间切换消息体的编码方式。
