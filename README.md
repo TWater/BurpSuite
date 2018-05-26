@@ -101,7 +101,7 @@ Burp 代理允许你通过监视和操纵应用程序传输的关键参数和其
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.14.png)
 
 ##### 选项3：Intercept Server Responses
-配置拦截规则，设置拦截的匹配规则，不过这个选项是基于服务端拦截，当选小的 Intercept request based on the following rules 为选中状态时，Burpsuite会匹配响应包。
+配置拦截规则，设置拦截的匹配规则，不过这个选项是基于服务端拦截，当选小的 Intercept request based on the following rules 为选中状态时，Burpsuite 会匹配响应包。
 
 ##### 选项4：Intercept WebSockets Messages
 ##### 选项5：Response Modification
