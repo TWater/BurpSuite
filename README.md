@@ -57,36 +57,9 @@ Burp 代理允许你通过监视和操纵应用程序传输的关键参数和其
 #### 4、Options
 该选项主要用于设置代理监听、请求和响应、拦截反应、匹配和替换、ssl 等，其中有八大选项：Proxy Listeners 、Intercept Client Requests 、Intercept Server Responses 、Intercept WebSockets Messages 、Response Modification 、Match and replace 、SSL Pass Through 、Miscellaneous。
 
-![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.10.png)
-
 ##### 选项1：Proxy Listeners
 代理侦听器是侦听从您的浏览器传入的连接本地 HTTP 代理服务器。它允许您监视和拦截所有的请求和响应，并且位于 BurpProxy 的工作流的心脏。默认情况下，Burp 默认监听 12.0.0.1 地址，端口 8080 。要使用这个监听器，你需要配置你的浏览器使用 127.0.0.1 ：8080 作为代理服务器。此默认监听器是必需的测试几乎所有的基于浏览器的所有 Web 应用程序。
 
-###### Add：添加一个新的代理地址。
-
-![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.11.png)
-
-1、Binding：新建一个代理。`Bind to port：`- 绑定端口号
-`Bind to address：`- 绑定ip地址。
-
-![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.12.png)
-
-2、Request handling：这些设置包括选项来控制是否 BurpSuite 重定向通过此侦听器接收到的请求：
-
-- `Redirect to host：`- 如果配置了这个选项，Burp 会在每次请求转发到指定的主机，而不必受限于览器所请求的目标。需要注意的是，如果你正使用该选项，则可能需要配置匹配／替换规则重写的主机中的请求，如果服务器中，您重定向请求预期，不同于由浏览器发送一个主机头。
-- `Redirect to port：`- 如果配置了这个选项，Burp 会在每次请求转发到指定的端口，而不必受限于浏览。
-- Force use of SSL - 如果配置了这个选项，Burp 会使用 HTTPS 在所有向外的连接，即使传入的请求中使用普通的 HTTP 。您可以使用此选项，在与 SSL 相关的响应修改选项结合，开展 sslstrip 般的攻击使用 Burp ，其中，强制执行 HTTPS 的应用程序可以降级为普通的 HTTP 的受害用户的流量在不知不觉中通过 BurpProxy 代理。
-
-![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.13.png)
-
-3、Certificate：这些设置控制呈现给客户端的 SSL 服务器的 SSL 证书。
-
-- Generate CA-signed per-host certificate - 这是默认选项。安装后，BurpSuite 创造了一个独特的自签名的证书颁发机构（CA）证书，并将此计算机上使用，每次 BurpSuite 运行。当你的浏览器发出 SSL 连接到指定的主机，Burp 产生该主机，通过 CA 证书签名的 SSL 证书。您可以安装 BurpSuite 的 CA 证书作为在浏览器中受信任的根，从而使每个主机的证书被接受，没有任何警报。您还可以导出其他工具或 Burp 的其他实例使用 CA 证书。
-- `Generate a CA-signed certificate with a specific hostname：`- 这类似于前面的选项；然而，Burp 会产生一个单一的主机证书与每一个 SSL 连接使用，使用您指定的主机名。在进行无形的代理时，此选项有时是必要的，因为客户端没有发送连接请求，因此 Burp 不能确定 SSL 协议所需的主机名。你也可以安装 BurpSuite 的 CA 证书作为受信任的根。
-- `Use a custom certificate：`- 此选项使您可以加载一个特定的证书（在 PKCS＃12 格式）呈现给你的浏览器。如果应用程序使用它需要特定的服务器证书（例如一个给定序列号或证书链）的客户端应该使用这个选项。
-
-###### Edit：编辑选中的代理地址。
-###### Remove：删除选中代理地址。
 ##### 选项2：Intercept Client Requests
 配置拦截规则，设置拦截的匹配规则。当 Intercept request based on the following rules 为选中状态时，Burpsuite 会配置列表中的规则进行拦截或转发。
 
@@ -98,15 +71,39 @@ Burp 代理允许你通过监视和操纵应用程序传输的关键参数和其
 
 *规则按顺序处理，并且使用布尔运算符 AND 和 OR 组合。*
 
-![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.14.png)
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.10.png)
 
+###### Add：添加一个新的代理地址。
+1、Binding：新建一个代理。`Bind to port：`- 绑定端口号
+`Bind to address：`- 绑定ip地址。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.11.png)
+
+2、Request handling：这些设置包括选项来控制是否 BurpSuite 重定向通过此侦听器接收到的请求：
+
+- `Redirect to host：`- 如果配置了这个选项，Burp 会在每次请求转发到指定的主机，而不必受限于览器所请求的目标。需要注意的是，如果你正使用该选项，则可能需要配置匹配／替换规则重写的主机中的请求，如果服务器中，您重定向请求预期，不同于由浏览器发送一个主机头。
+- `Redirect to port：`- 如果配置了这个选项，Burp 会在每次请求转发到指定的端口，而不必受限于浏览。
+- Force use of SSL - 如果配置了这个选项，Burp 会使用 HTTPS 在所有向外的连接，即使传入的请求中使用普通的 HTTP 。您可以使用此选项，在与 SSL 相关的响应修改选项结合，开展 sslstrip 般的攻击使用 Burp ，其中，强制执行 HTTPS 的应用程序可以降级为普通的 HTTP 的受害用户的流量在不知不觉中通过 BurpProxy 代理。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.12.png)
+
+3、Certificate：这些设置控制呈现给客户端的 SSL 服务器的 SSL 证书。
+
+- Generate CA-signed per-host certificate - 这是默认选项。安装后，BurpSuite 创造了一个独特的自签名的证书颁发机构（CA）证书，并将此计算机上使用，每次 BurpSuite 运行。当你的浏览器发出 SSL 连接到指定的主机，Burp 产生该主机，通过 CA 证书签名的 SSL 证书。您可以安装 BurpSuite 的 CA 证书作为在浏览器中受信任的根，从而使每个主机的证书被接受，没有任何警报。您还可以导出其他工具或 Burp 的其他实例使用 CA 证书。
+- `Generate a CA-signed certificate with a specific hostname：`- 这类似于前面的选项；然而，Burp 会产生一个单一的主机证书与每一个 SSL 连接使用，使用您指定的主机名。在进行无形的代理时，此选项有时是必要的，因为客户端没有发送连接请求，因此 Burp 不能确定 SSL 协议所需的主机名。你也可以安装 BurpSuite 的 CA 证书作为受信任的根。
+- `Use a custom certificate：`- 此选项使您可以加载一个特定的证书（在 PKCS＃12 格式）呈现给你的浏览器。如果应用程序使用它需要特定的服务器证书（例如一个给定序列号或证书链）的客户端应该使用这个选项。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.13.png)
+
+###### Edit：编辑选中的代理地址。
+###### Remove：删除选中代理地址。
 ##### 选项3：Intercept Server Responses
 配置拦截规则，设置拦截的匹配规则，不过这个选项是基于服务端拦截，当选小的 Intercept request based on the following rules 为选中状态时，Burpsuite 会匹配响应包。
 
 ##### 选项4：Intercept WebSockets Messages
 ##### 选项5：Response Modification
 
-![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.15.png)
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.14.png)
 
 ##### 选项6：Match and Replace
 用于自动替换请求和响应通过代理的部分。对于每一个 HTTP 消息，已启用的匹配和替换规则依次执行，选择适用的规则进行匹配执行。
@@ -115,6 +112,49 @@ Burp 代理允许你通过监视和操纵应用程序传输的关键参数和其
 
 ##### 选项7：SSL Pass Through
 
-![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.16.png)
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.15.png)
 
 ##### 选项8：Miscellaneous
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.16.png)
+
+## Target 模块（目标模块）
+### Target 功能
+目标工具包含了 Site map ，用你的目标应用程序的详细信息。它可以让你定义哪些对象在范围上为你目前的工作，也可以让你手动测试漏洞的过程，Target 分为 Site map 和 Scope 两个选项卡。
+
+#### 选项一、Site map
+Site map 会在目标中以树形和表形式显示，并且还可以查看完整的请求和响应。树视图包含内容的分层表示，随着细分为地址、目录、文件和参数化请求的 URL 。您还可以扩大有趣的分支才能看到进一步的细节。如果您选择树的一个或多个部分，在所有子分支所选择的项目和项目都显示在表视图。
+
+该表视图显示有关每个项目（URL ，HTTP 状态代码，网页标题等）的关键细节。您可以根据任意列进行排序表（单击列标题来循环升序排序、降序排序和未排序）。如果您在表中选择一个项目，请求和响应（如适用）该项目显示在请求／响应窗格。这包含了请求和响应的 HTTP 报文的编辑器，提供每封邮件的详细分析。
+
+站点地图汇总所有的信息 BurpSuite 已经收集到的有关申请。这包括：
+
+- 所有这一切都通过代理服务器直接请求的资源。
+- 已推断出通过分析响应代理请求的任何物品（前提是你没有禁用被动 Spider ）。
+- 内容使用 Spider 或内容发现功能查找。
+- 由用户手动添加的任何项目，从其它工具的输出。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/2.1.png)
+
+这样看起来 Site map 是不是很乱，则可以右击 Add to scope ，然后点击 Filter 勾选 Show only in-scope items ，此时你再回头看 Site map 就只有百度一个地址了。这里 Filter 可以过滤一些参数，Show all 显示全部，Hide all 隐藏所有，如果勾选了表示不过滤。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/2.2.png)
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/2.3.png)
+
+选择之后就只剩下一个网址了。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/2.4.png)
+
+针对地址右击显示当前可以做的一些动作操作等功能。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/2.5.png)
+
+#### 选项二、Scope
+这个主要是配合 Site map 做一些过滤的功能。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/2.6.png)
+
+已请求在 Site map 中的项目会显示为黑色，尚未被请求的项目显示为灰色。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/2.7.png)
