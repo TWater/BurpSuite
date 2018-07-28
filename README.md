@@ -171,7 +171,7 @@ Burp Spider 能使你清楚地了解到一个 web 应用程序是怎样工作的
 要对应用程序使用 Burp Spider 需要两个简单的步骤：
 
 1. 使用 Burp Proxy 配置为你浏览器的代理服务器，浏览目标应用程序（为了节省时间，你可以关闭代理拦截）。
-2. 到站点地图的 "Target" 选项上，选中目标应用程序驻留的主机和目录。选择上下文菜单的 "Spider this host／branc" 选项。
+2. 到站点地图的 “ Target ” 选项上，选中目标应用程序驻留的主机和目录。选择上下文菜单的 “ Spider this host／branc ” 选项。
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/3.1.png)
 
