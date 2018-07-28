@@ -279,12 +279,12 @@ Live Passive Scanning：被动扫描。只分析流量不发送任何请求。
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/4.4.png)
 
 #### 4、Issue definitions
-漏洞列表，列出了Burp可以扫描到的漏洞详情。
+漏洞列表，列出了 Burp 可以扫描到的漏洞详情。
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/4.5.png)
 
 #### 5、Options
-包含Burp扫描选项进行攻击的插入点、主动扫描引擎、主动扫描优化、主动扫描区和被动扫描区域。
+包含 Burp 扫描选项进行攻击的插入点、主动扫描引擎、主动扫描优化、主动扫描区和被动扫描区域。
 
 ##### 1、Attack Insertion Points
 
