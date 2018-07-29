@@ -5,8 +5,8 @@
 - [ Spider 模块（蜘蛛爬行）](#3)
 - [ Scanner 模块（漏洞扫描）](#4)
 - [ Intruder 模块（暴力破解）](#5)
-- [1.语法示例](#5)
-- [1.语法示例](#5)
+- [ Repeater 模块（中继器）](#6)
+- [ Sequencer模块（定序器）](#7)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
@@ -421,9 +421,36 @@ Payload数量类型设置
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.12.png)
 
-<h2 id="5">Intruder 模块（暴力破解）</h2>
+<h2 id="6">Repeater 模块（中继器）</h2>
 
-<h2 id="5">Intruder 模块（暴力破解）</h2>
+### 一、简介
+Burp Repeater 是一个手动修改并补发个别 HTTP 请求，并分析他们的响应的工具。它最大的用途就是和其他 Burp Suite 工具结合起来。你可以从目标站点地图，从 Burp Proxy 浏览记录，或者从 Burp Intruder 攻击结果上的请求，发送到 Repeater 上，并手动调整这个请求来微调对漏洞的探测或攻击。
+
+### 二、模块说明
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/6.1.png)
+
+1. 可以从 Proxy history 、Site map 、Scanner 等模块中右键菜单`Send to Repeater`发送到 Repeater ，对页面数据进行修改发送。
+2. 点击`go`，发送请求，右边响应请求。
+3. 可以通过`<`和`>`来返回上一次和下一个操作。
+4. 单击`x`可以删除当前测试请求页面。
+5. 底部的功能用于搜索条件，可以用正则表达式，底部右边显示匹配结果数。
+
+`Raw` — 这显示纯文本格式的消息。在文本面板的底部有一个搜索和加亮的功能，可以用来快速地定位出消息里的感兴趣的字符串，如出错消息。搜索栏左边的弹出项让你能控制状况的灵敏度，以及是否使用简单文本或者十六进制搜索。
+
+`Params` — 对于包含参数（ URL 查询字符串、cookie 头，或者消息体）的请求，这个选项把这些参数分析为名字／值的格式，这就可以简单地随他们进行查看和修改了。
+
+`Headers` — 这里是以名字／值的格式来显示 HTTP 的消息头，并且也以原始格式显示了消息体。
+
+`Hex` — 这里允许你直接编辑由原始二进制数据组成的消息。如果在文本编辑器修改某种类型的传输（如：MIME 编码的浏览器请求）可能包含了损坏的二进制内容。为了修改这类消息，应该使用十六进制编辑器。
+
+该模块的设置在菜单栏 Repeater 中，主要选项如下：
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/6.2.png)
+
+<h2 id="7">Sequencer模块（定序器）</h2>
+
+### 
 
 <h2 id="5">Intruder 模块（暴力破解）</h2>
 
