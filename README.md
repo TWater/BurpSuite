@@ -541,7 +541,7 @@ Extender 主要由四个模块组成：
 
 1. Extensions 扩展
 2. BApp Store 应用程序商店
-3. APIS
+3. APIs
 4. Options 选项
 
 #### 1. Extensions 扩展
