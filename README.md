@@ -1,5 +1,20 @@
 # BurpSuite
-## Proxy 模块（代理模块）
+
+- [ Proxy 模块（代理模块）](#1)
+- [ Target 模块（目标模块）](#2)
+- [ Spider 模块（蜘蛛爬行）](#3)
+- [ Scanner 模块（漏洞扫描）](#4)
+- [ Intruder 模块（暴力破解）](#5)
+- [1.语法示例](#5)
+- [1.语法示例](#5)
+- [1.语法示例](#5)
+- [1.语法示例](#5)
+- [1.语法示例](#5)
+- [1.语法示例](#5)
+- [1.语法示例](#5)
+
+<h2 id="1">Proxy 模块（代理模块）</h2>
+
 ### 一、简介
 Proxy 代理模块作为 BurpSuite 的核心功能，拦截 HTTP/S 的代理服务器，作为一个在浏览器和目标应用程序之间的中间人，允许你拦截、查看、修改在两个方向上的原始数据流。
 
@@ -118,7 +133,8 @@ Burp 代理允许你通过监视和操纵应用程序传输的关键参数和其
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/1.16.png)
 
-## Target 模块（目标模块）
+<h2 id="2">Target 模块（目标模块）</h2>
+
 ### Target 功能
 目标工具包含了 Site map ，用你的目标应用程序的详细信息。它可以让你定义哪些对象在范围上为你目前的工作，也可以让你手动测试漏洞的过程，Target 分为 Site map 和 Scope 两个选项卡。
 
@@ -159,7 +175,8 @@ Site map 会在目标中以树形和表形式显示，并且还可以查看完�
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/2.7.png)
 
-## Spider 模块（蜘蛛爬行）
+<h2 id="3">Spider 模块（蜘蛛爬行）</h2>
+
 ### 一、简介
 Burp Spider 是一个映射 web 应用程序的工具。它使用多种智能技术对一个应用程序的内容和功能进行全面的清查。
 
@@ -239,7 +256,8 @@ Burp Spider 能使你清楚地了解到一个 web 应用程序是怎样工作的
 - Use HTTP version 1.1 ：在蜘蛛请求中使用 HTTP／1.1 ，不选中则使用 HTTP/1.0 。
 - Use Referer header ：当从一个页面访问另一个页面是加入 Referer 头，这将更加相似与浏览器访问。
 
-## Scanner 模块（漏洞扫描）
+<h2 id="4">Scanner 模块（漏洞扫描）</h2>
+
 ### 一、简介
 Burp Scanner 是一个进行自动发现 web 应用程序的安全漏洞的工具。它是为渗透测试人员设计的，并且它和你现有的手动执行进行的 web 应用程序半自动渗透测试的技术方法很相似。
 
@@ -309,3 +327,110 @@ Live Passive Scanning：被动扫描。只分析流量不发送任何请求。
 ##### 6、Static Code Analysis
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/4.11.png)
+
+<h2 id="5">Intruder 模块（暴力破解）</h2>
+
+### 一、简介
+Burp Intruder 是一个强大的工具，用于自动对 Web 应用程序自定义的攻击，Burp Intruder 是高度可配置的，并被用来在广范围内进行自动化攻击。你可以使用 Burp Intruder 方便地执行许多任务，包括枚举标识符、获取有用数据、漏洞模糊测试。合适的攻击类型取决于应用程序的情况，可能包括：缺陷测试、SQL 注入、跨站点脚本、缓冲区溢出、路径遍历、暴力攻击认证系统、枚举、操纵参数、拖出隐藏的内容和功能、会话令牌测序和会话劫持、数据挖掘、并发攻击和应用层的拒绝服务式攻击。
+
+### 二、模块说明
+Burp Intruder 主要有四个模块组成:
+
+1. Target 用于配置目标服务器进行攻击的详细信息。
+2. Positions 设置 Payloads 的插入点以及攻击类型（攻击模式）。
+3. Payloads 设置 Payload ，配置字典。
+4. Opetions 此选项卡包含了 Request Headers 、Request Engine 、Attack Results 、Grep－Match 、Grep－Extrack 、Grep－Payloads 和 Redirections 。你可以在发动攻击之前，在主要 Intruder 的 UI 上编辑这些选项，大部分设置也可以在攻击时对已在运行的窗口进行修改。
+
+#### 1、Target 目标选项（ Target tab ）
+这个选项是用来配置目标服务器的细节：
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.1.png)
+
+#### 2、Positions 位置选项（ Positions tab ）
+
+这个选项是用来配置在攻击里产生的所有 HTTP 请求的模板：
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.2.png)
+
+使用一对`§`字符来标记出有效负荷的位置，在这两个符号之间包含了模板文本的内容。当把一个有效负荷放置到一个给出的请求的特殊位置上时，就把这`§`符号放到这个位置，然后在两个符号之间的出现的文本都会被有效负荷替换。当有个特殊位置没有为一个给出的请求安排有效负荷时（这只适用“ Sniper ”攻击类型），那个位置的`§`字符会被删除，出现在它们之间的文本不会变化。
+
+当使用 Burp Suite 发送一个其他地方的请求时，Burp Intruder 会对你最想放置有效负荷的位置做一个最好的猜测，并且它把这些放置在每个 URL 和主体参数的值里，以及每个 cookie 里。每个标记和它中间的文本都会被加亮以显得更清晰。你可以使用 Intruder 菜单上的选项标记的位置是要替换还是附加现有的参数值。在上面的请求编辑器里，指出了定义位置的数量和文本模板的大小。
+
+你可以使用选项上的按钮来控制位置上的标记：
+
+1. `Add §` — 在当前光标位置插入一个位置标记。
+2. `Clear §` — 删除整个模板或选中的部分模板里的位置标记。
+3. `Auto §` — 这会对放置标记的位置做一个猜测，放哪里会有用，然后就把标记放到相应位置。这是一个为攻击常规漏洞（ SQL 注入）快速标记出合适位置的有用的功能，然后人工标记是为自定义攻击的。
+4. `Refresh` — 如果需要，可以刷新编辑器里有颜色的代码。
+5. `Clear` — 删除整个编辑器内容。
+
+#### 3、Payloads 有效负荷选项（Payloads tab）
+这个选项是用来配置一个或多个有效负荷的集合。如果定义了“ cluster bomb ”和“ pitchfork ”攻击类型，然后必须为每定义的有效负荷位置（最多 8 个）配置一个单独的有效负荷。使用“ payload set ”下拉菜单选择要配置的有效负荷。
+
+##### 选项1、Payload Sets
+Payload数量类型设置
+
+##### 选项2、Payload Opetions［ Simple list ］
+该选项会根据选项 1 中 Payload type 的设置而改变
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.3.png)
+
+##### 选项3、Payload Processing
+对生成的 Payload 进行编码、加密、截取等操作
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.4.png)
+
+##### 选项4、Payload Encoding
+你可以配置哪些有效载荷中的字符应该是 URL 编码的 HTTP 请求中的安全传输。任何已配置的 URL 编码最后应用，任何有效载荷处理规则执行之后。这是推荐使用此设置进行最终 URL 编码，而不是一个有效载荷处理规则，因为可以用来有效载荷的 grep 选项来检查响应为呼应有效载荷的最终 URL 编码应用之前。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.5.png)
+
+#### 4、Opetions 选项卡（ Options tab ）
+此选项卡包含了 Request Headers 、Request Engine 、Attack Results 、Grep－Match 、Grep－Extrack 、Grep－Payloads 和 Redirections 。你可以在发动攻击之前，在主要 Intruder 的 UI 上编辑这些选项，大部分设置也可以在攻击时对已在运行的窗口进行修改。
+
+##### 选项1、Request Headers
+这些设置控制在 Intruder 中是否更新配置请求头。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.6.png)
+
+如果选中“ Update Content－Length header ”框，Burp Intruder 会使用每个请求的 HTTP 主体长度的正确值，添加或更新这个请求里 HTTP 消息头的内容长度。这个功能对一些需要把可变长度的有效载荷插入到 HTTP 请求模板主体的攻击是很有必要的。这个 HTTP 规范和大多数 web 服务器一样，需要使用消息头内容长度来指定 HTTP 主体长度的正确值。如果没有指定正确值，目标服务器会返回一个错误，也可能返回一个未完成的请求，也可能无限期地等待接收请求里的进一步数据。
+
+如果选中“ Set Connection：close ”框，则 Burp Intruder 会添加或更新 HTTP 消息头的连接来请求在每个请求后已关闭的连接。在多数情况下，这个选项会让攻击执行得更快。
+
+##### 选项2、Request Engine 设置发送请求的线程、超时重试等。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.7.png)
+
+##### 选项3、Attack Results 设置攻击结果的显示。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.8.png)
+
+##### 选项4、Grep－Match 在响应中找出存在指定的内容的一项。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.9.png)
+
+##### 选项5、Grep－Extract 通过正则提取返回信息中的内容。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.10.png)
+
+##### 选项6、Grep－Payloads 这些设置可以用于包含已提交的有效负载的反射的标志结果项目。如果启用了此选项，Burp Suite 会添加包含一个复选框指示当前负载的值在每个响应发现新的结果列。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.11.png)
+
+##### 选项7、Redirections 重定向响应，控制 Burp 在进行攻击时如何处理重定向。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/5.12.png)
+
+<h2 id="5">Intruder 模块（暴力破解）</h2>
+
+<h2 id="5">Intruder 模块（暴力破解）</h2>
+
+<h2 id="5">Intruder 模块（暴力破解）</h2>
+
+<h2 id="5">Intruder 模块（暴力破解）</h2>
+
+<h2 id="5">Intruder 模块（暴力破解）</h2>
+
+<h2 id="5">Intruder 模块（暴力破解）</h2>
+
+<h2 id="5">Intruder 模块（暴力破解）</h2>
