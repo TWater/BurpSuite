@@ -7,7 +7,7 @@
 - [ Intruder 模块（暴力破解）](#5)
 - [ Repeater 模块（中继器）](#6)
 - [ Sequencer 模块（定序器）](#7)
-- [1.语法示例](#5)
+- [ Decoder 模块（编码模块）](#8)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
@@ -487,7 +487,22 @@ Burp Sequencer 主要由三个模块组成：
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/7.6.png)
 
-<h2 id="5">Intruder 模块（暴力破解）</h2>
+<h2 id="8">Decoder 模块（编码模块）</h2>
+
+### 一、简介
+Burp Decoder 是 Burp Suite 中一款编码解码工具，将原始数据转换成各种编码和哈希表的简单工具，它能够智能地识别多种编码格式采用启发式技术。
+
+### 二、模块说明
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/8.1.png)
+
+通过有请求的任意模块的右键菜单 Send to Decoder 或输入数据选择相应的数据格式即可进行解码编码操作，或直接点击 Smart decode 进行智能解码。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/8.2.png)
+
+更重要的是，对于同一个数据，我们可以在 Decoder 的界面，进行多次编码、解码的转换。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/8.3.png)
 
 <h2 id="5">Intruder 模块（暴力破解）</h2>
 
