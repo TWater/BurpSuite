@@ -9,7 +9,7 @@
 - [ Sequencer 模块（定序器）](#7)
 - [ Decoder 模块（编码模块）](#8)
 - [ Comparer 模块（比较器）](#9)
-- [1.语法示例](#5)
+- [ Extender 模块（扩展器）](#10)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
 
@@ -531,7 +531,58 @@ Comparer 数据加载的方式常用的有：
 
 如果点击了`Words`或者`Bytes`，则进入比对界面，页面自动通过背景颜色显示数据的差异。
 
-<h2 id="5">Intruder 模块（暴力破解）</h2>
+<h2 id="10">Extender 模块（扩展器）</h2>
+
+### 一、简介
+Burp 在软件中提供了支持第三方拓展插件的功能，方便使用者编写自己的自定义插件或从插件商店中安装拓展插件。Burp 扩展程序可以以多种方式支持自定义 Burp 的行为，例如：修改 HTTP 请求和响应，自定义 UI ，添加自定义扫描程序检查以及访问关键运行时信息，包括代理历史记录、目标站点地图和扫描程序问题等。
+
+### 二、模块说明
+Extender 主要由四个模块组成：
+
+1. Extensions 扩展
+2. BApp Store 应用程序商店
+3. APIS
+4. Options 选项
+
+#### 1. Extensions 扩展
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/10.1.png)
+
+日志信息的输出有三种方式：
+
+1. 系统控制台输出。
+2. 存储到指定的文件中。
+3. Burp 的界面输出默认情况下，会选择 Burp 的界面输出。
+
+#### 2. BApp Store 应用程序商店
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/10.2.png)
+
+从图中我们可以看出，左边为各个插件的应用列表，当选中某个插件后，右侧显示的为该插件的描述信息和安装信息。如果我们需要使用某个插件，则点击右侧下方的`Install`按钮，进行安装。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/10.3.png)
+
+此时，安装按钮置为灰色，同时显示为`Installing`，右下角也显示安装中，如上图。安装完成后，界面会显示重新安装`Reinstall`和插件评分按钮`Submit rating`，作为插件商店的用户推荐。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/10.4.png)
+
+安装完毕后，在 Burp Extender 的 Extension 的 Tab 页面中，会自动显示已加载的插件列表。通过插件列表的管理，我们可以对插件进行后期的维护。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/10.5.png)
+
+当然，除了从应用商店自动安装插件外，我们也可以下载插件，进行手工安装。如下图：
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/10.6.png)
+
+#### 3. APIs
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/10.7.png)
+
+#### 4. Options 选项
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/10.8.png)
+
+下面还有一个 Ruby 的环境和上面的差不多。
 
 <h2 id="5">Intruder 模块（暴力破解）</h2>
 
