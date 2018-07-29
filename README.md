@@ -6,7 +6,7 @@
 - [ Scanner 模块（漏洞扫描）](#4)
 - [ Intruder 模块（暴力破解）](#5)
 - [ Repeater 模块（中继器）](#6)
-- [ Sequencer模块（定序器）](#7)
+- [ Sequencer 模块（定序器）](#7)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
@@ -448,9 +448,44 @@ Burp Repeater 是一个手动修改并补发个别 HTTP 请求，并分析他们
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/6.2.png)
 
-<h2 id="7">Sequencer模块（定序器）</h2>
+<h2 id="7">Sequencer 模块（定序器）</h2>
 
-### 
+### 一、简介
+Burp Sequencer 是一种用于分析数据项的一个样本中的随机性质量的工具。你可以用它来测试应用程序的 session tokens（ 会话 tokens ）或其他重要数据项的本意是不可预测的，比如反弹 CSRF tokens ，密码重置 tokens 等。
+
+### 二、模块说明
+Burp Sequencer 主要由三个模块组成：
+
+1. Live capture 信息截取
+2. Manual load 手动加载
+3. Analysis options 选项分析
+
+#### 1、Live capture 信息截取
+##### 选项1、Select Live Capture Request
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/7.1.png)
+
+##### 选项2、Token Location Within Response
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/7.2.png)
+
+##### 选项3、Live Capture Options
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/7.3.png)
+
+#### 2、Manual load 手动加载
+##### 选项1、Manual Load
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/7.4.png)
+
+#### 3、Analysis options 选项分析
+##### 选项1、Token Handling 令牌处理
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/7.5.png)
+
+##### 选项2、Token Analysis 令牌分析
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/7.6.png)
 
 <h2 id="5">Intruder 模块（暴力破解）</h2>
 
