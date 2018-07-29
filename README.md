@@ -8,7 +8,7 @@
 - [ Repeater 模块（中继器）](#6)
 - [ Sequencer 模块（定序器）](#7)
 - [ Decoder 模块（编码模块）](#8)
-- [1.语法示例](#5)
+- [ Comparer 模块（比较器）](#9)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
 - [1.语法示例](#5)
@@ -504,7 +504,32 @@ Burp Decoder 是 Burp Suite 中一款编码解码工具，将原始数据转换�
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/8.3.png)
 
-<h2 id="5">Intruder 模块（暴力破解）</h2>
+<h2 id="9">Comparer 模块（比较器）</h2>
+
+### 一、简介
+Burp Comparer 在 Burp Suite 中主要提供一个可视化的差异比对功能，来对比分析两次数据之间的区别。使用中的场景可能是：
+
+1. 枚举用户名过程中，对比分析登陆成功和失败时，服务器端反馈结果的区别。 
+2. 使用 Intruder 进行攻击时，对于不同的服务器端响应，可以很快的分析出两次响应的区别在哪里。 
+3. 进行 SQL 注入的盲注测试时，比较两次响应消息的差异，判断响应结果与注入条件的关联关系。
+
+### 二、模块说明
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/9.1.png)
+
+对于 Comparer 的使用，主要有两个环节组成：先是数据加载，然后是差异分析。
+
+Comparer 数据加载的方式常用的有：
+
+1. 从其他 Burp 工具通过上下文菜单转发过来。
+2. 直接粘贴。
+3. 从文件加载三种方式。
+
+当加载完毕后，如果你选择了两次不同的请求或应答消息，则下发的比较按钮将被激活，可以选择文本比较或者字节比较。
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/9.2.png)
+
+如果点击了`Words`或者`Bytes`，则进入比对界面，页面自动通过背景颜色显示数据的差异。
 
 <h2 id="5">Intruder 模块（暴力破解）</h2>
 
