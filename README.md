@@ -601,9 +601,9 @@ Project options 主要由五个模块组成：
 #### 1. Connections 连接
 选项1、Platform Authentication
 
-选项2、Upstream proxy servers
+选项2、Upstream Proxy Servers
 
-选项3、Socks proxy
+选项3、SOCKS Proxy
 
 选项4、Timeouts
 
@@ -611,14 +611,14 @@ Project options 主要由五个模块组成：
 
 选项5、Hosname Resolution
 
-选项6、Out-of-scope Requests
+选项6、Out-of-Scope Requests
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.2.png)
 
 #### 2. HTTP
 选项1、Redirections
 
-选项2、Streaming responses
+选项2、Streaming Responses
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.3.png)
 
@@ -672,7 +672,7 @@ User options 主要由4个模块组成：
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.1.png)
 
-选项3、Socks Proxy
+选项3、SOCKS Proxy
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.2.png)
 
@@ -686,13 +686,13 @@ User options 主要由4个模块组成：
 #### 3. Display
 选项1、User Interface
 
-选项2、Http Message Display
+选项2、HTTP Message Display
 
 选项3、Character Sets
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.4.png)
 
-选项4、Html Rendering
+选项4、HTML Rendering
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.5.png)
 
