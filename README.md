@@ -11,7 +11,7 @@
 - [ Comparer 模块（比较器）](#9)
 - [ Extender 模块（扩展器）](#10)
 - [ Project options 模块（项目选择）](#11)
-- [1.语法示例](#5)
+- [ User options 模块（用户选择）](#12)
 
 <h2 id="1">Proxy 模块（代理模块）</h2>
 
@@ -653,4 +653,60 @@ Project options 主要由五个模块组成：
 
 ![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.8.png)
 
-<h2 id="5">Intruder 模块（暴力破解）</h2>
+<h2 id="12">User options 模块（用户选择）</h2>
+### 一、简介
+User options 模块主要用来配置一些常用的选项。
+
+### 二、模块说明
+User options 主要由4个模块组成：
+
+1. Connections 连接
+2. SSL
+3. Display
+4. Misc 杂项
+
+#### 1. Connections 连接
+选项1、Platform Authentication
+
+选项2、Upstream Proxy Servers
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.1.png)
+
+选项3、Socks Proxy
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.2.png)
+
+#### 2. SSL
+选项1、Java SSL Options
+
+选项2、Client SSL Certificates
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.3.png)
+
+#### 3. Display
+选项1、User Interface
+
+选项2、Http Message Display
+
+选项3、Character Sets
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.4.png)
+
+选项4、Html Rendering
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.5.png)
+
+#### 4. Misc 杂项
+选项1、Hotkeys
+
+选项2、Logging
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.6.png)
+
+选项3、Temporary Files Location
+
+选项4、Proxy Interception
+
+选项5、Performance Feedback
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/12.7.png)
