@@ -10,7 +10,7 @@
 - [ Decoder 模块（编码模块）](#8)
 - [ Comparer 模块（比较器）](#9)
 - [ Extender 模块（扩展器）](#10)
-- [1.语法示例](#5)
+- [ Project options 模块（项目选择）](#11)
 - [1.语法示例](#5)
 
 <h2 id="1">Proxy 模块（代理模块）</h2>
@@ -584,6 +584,73 @@ Extender 主要由四个模块组成：
 
 下面还有一个 Ruby 的环境和上面的差不多。
 
-<h2 id="5">Intruder 模块（暴力破解）</h2>
+<h2 id="11">Project options 模块（项目选择）</h2>
+
+### 一、简介
+Project options 主要用来对 Project 的一些设置。
+
+### 二、模块说明
+Project options 主要由五个模块组成：
+
+1. Connections 连接
+2. HTTP
+3. SSL
+4. Sessions
+5. Misc 杂项
+
+#### 1. Connections 连接
+选项1、Platform Authentication
+
+选项2、Upstream proxy servers
+
+选项3、Socks proxy
+
+选项4、Timeouts
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.1.png)
+
+选项5、Hosname Resolution
+
+选项6、Out-of-scope Requests
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.2.png)
+
+#### 2. HTTP
+选项1、Redirections
+
+选项2、Streaming responses
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.3.png)
+
+选项3、Status 100 Responses
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.4.png)
+
+#### 3. SSL
+选项1、SSL Negotiation
+
+选项2、Client SSL Certificates
+
+选项3、Server SSL Certificates
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.5.png)
+
+#### 4. Sessions
+选项1、Session Handling Rules
+
+选项2、Cookie Jar
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.6.png)
+
+选项3、Macros
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.7.png)
+
+#### 5. Misc 杂项
+选项1、Scheduled Tasks
+
+选项2、Burp Collaborator Server
+
+![](https://github.com/TWater/BurpSuite/raw/master/Picture/11.8.png)
 
 <h2 id="5">Intruder 模块（暴力破解）</h2>
